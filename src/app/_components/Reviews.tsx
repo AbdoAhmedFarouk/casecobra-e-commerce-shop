@@ -33,8 +33,9 @@ function ReviewColumn({
   reviewClassName?: (reviewIndex: number) => string;
   msPerPixel: number;
 }) {
-  const columnRef = useRef<HTMLDivElement | null>(null);
   const [columnHeight, setColumnHeight] = useState(0);
+  const columnRef = useRef<HTMLDivElement | null>(null);
+
   const duration = `${columnHeight * msPerPixel}ms`;
 
   useEffect(() => {
@@ -54,7 +55,7 @@ function ReviewColumn({
   return (
     <div
       ref={columnRef}
-      className={cn("animate-marquee space-y-8 py-4")}
+      className={cn("animate-marquee space-y-8 py-4", className)}
       style={{ "--marquee-duration": duration } as React.CSSProperties}
     >
       {reviews.concat(reviews).map((imgSrc, reviewIndex) => (
@@ -85,7 +86,8 @@ function Review({ imgSrc, className, ...props }: ReviewProps) {
   return (
     <div
       className={cn(
-        "animate-fade-in rounded-[2.25rem] bg-white p-6 opacity-0 shadow-xl shadow-slate-900/5"
+        "animate-fade-in rounded-[2.25rem] bg-white p-6 opacity-0 shadow-xl shadow-slate-900/5",
+        className
       )}
       style={{ animationDelay }}
       {...props}
@@ -96,10 +98,11 @@ function Review({ imgSrc, className, ...props }: ReviewProps) {
 }
 
 function ReviewGrid() {
-  const splitArray = useSplitArray();
-
   const containerRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.4 });
+
+  const splitArray = useSplitArray();
+
   const columns = splitArray(PHONES, 3);
   const column1 = columns[0];
   const column2 = columns[1];
@@ -127,9 +130,9 @@ function ReviewGrid() {
           <ReviewColumn
             reviews={[...column3[1], ...column2]}
             className="hidden md:block"
-            reviewClassName={(reviewIndex) =>
-              reviewIndex >= column2.length ? "lg:hidden" : ""
-            }
+            // reviewClassName={(reviewIndex) =>
+            //   reviewIndex >= column2.length ? "lg:hidden" : ""
+            // }
             msPerPixel={15}
           />
           <ReviewColumn
@@ -139,6 +142,7 @@ function ReviewGrid() {
           />
         </>
       ) : null}
+
       <div
         className="pointer-events-none absolute inset-x-0 top-0
         h-32 bg-gradient-to-b from-slate-100"
