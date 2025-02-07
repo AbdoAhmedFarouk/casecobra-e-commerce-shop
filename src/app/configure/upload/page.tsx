@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 
 import Dropzone, { FileRejection } from "react-dropzone";
 import { cn } from "@/lib/utils";
@@ -9,7 +10,6 @@ import { Progress } from "@/app/_components/ui/progress";
 
 import { Image, Loader2, MousePointerSquareDashed } from "lucide-react";
 import { useUploadThing } from "@/lib/uploadthing";
-import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Page() {
@@ -24,7 +24,7 @@ export default function Page() {
     onClientUploadComplete: ([data]) => {
       const configId = data.serverData.configId;
       startTransition(() => {
-        router.push(`configure/design?id=${configId}`);
+        router.push(`/configure/design?id=${configId}`);
       });
     },
     onUploadProgress(p) {
