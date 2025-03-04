@@ -81,7 +81,7 @@ export default async function Navbar() {
                     className: "hidden sm:flex items-center gap-1",
                   })}
                 >
-                  Create cdase
+                  Create case
                   <ArrowRight className="ml-1.5 size-5" />
                 </Link>
               </>

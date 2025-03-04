@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import DesignConfigurator from "./DesignConfigurator";
-import { db } from "@/db";
+import { db } from "@/app/_db";
 
 interface PageProps {
   searchParams: { [key: string]: string | string[] | undefined };

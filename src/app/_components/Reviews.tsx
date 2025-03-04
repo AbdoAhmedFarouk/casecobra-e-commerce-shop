@@ -6,7 +6,7 @@ import useSplitArray from "../_hooks/useSplitArray";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Phone from "./Phone";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/_lib/utils";
 import { useInView } from "framer-motion";
 
 const PHONES = [

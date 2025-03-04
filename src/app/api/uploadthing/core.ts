@@ -1,6 +1,6 @@
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { z } from "zod";
-import { db } from "@/db";
+import { db } from "@/app/_db";
 import sharp from "sharp";
 
 const f = createUploadthing();

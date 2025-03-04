@@ -4,13 +4,13 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 
 import Dropzone, { FileRejection } from "react-dropzone";
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/_lib/utils";
 
 import { Progress } from "@/app/_components/ui/progress";
 
 import { Image, Loader2, MousePointerSquareDashed } from "lucide-react";
-import { useUploadThing } from "@/lib/uploadthing";
-import { useToast } from "@/hooks/use-toast";
+import { useUploadThing } from "@/app/_lib/uploadthing";
+import { useToast } from "@/app/_hooks/use-toast";
 
 export default function Page() {
   const [isDragOver, setIsDragOver] = useState<boolean>(false);

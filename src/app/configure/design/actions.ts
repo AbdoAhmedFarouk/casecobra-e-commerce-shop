@@ -1,6 +1,6 @@
 "use server";
 
-import { db } from "@/db";
+import { db } from "@/app/_db";
 import {
   CaseColor,
   CaseFinish,
