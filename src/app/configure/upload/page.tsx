@@ -10,7 +10,7 @@ import { Progress } from "@/app/_components/ui/progress";
 
 import { Image, Loader2, MousePointerSquareDashed } from "lucide-react";
 import { useUploadThing } from "@/app/_lib/uploadthing";
-import { useToast } from "@/app/_hooks/use-toast";
+import { useToast } from "@/app/_components/ui/use-toast";
 
 export default function Page() {
   const [isDragOver, setIsDragOver] = useState<boolean>(false);

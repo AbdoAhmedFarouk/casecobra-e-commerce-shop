@@ -1,4 +1,4 @@
-import { toast } from "@/app/_hooks/use-toast";
+import { toast } from "@/app/_components/ui/use-toast";
 import { ClientUploadedFileData } from "uploadthing/types";
 import { base64ToBlob } from "./base64ToBlobService";
 import { SaveConfiguratorFnProps } from "./useSaveConfig";

@@ -1,5 +1,5 @@
 import { useRouter } from "next/navigation";
-import { useToast } from "@/app/_hooks/use-toast";
+import { useToast } from "@/app/_components/ui/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { saveConfig as saveConfigAction, SaveConfigArgs } from "./actions";
 import { useUploadThing } from "@/app/_lib/uploadthing";
@@ -16,7 +16,7 @@ export interface SaveConfiguratorFnProps {
 
 export function useSaveConfig() {
   const router = useRouter();
-  
+
   const { toast } = useToast();
   const { startUpload } = useUploadThing("imageUploader");
 
@@ -28,10 +28,12 @@ export function useSaveConfig() {
     }) => {
       const { configProps, saveArgs } = args;
 
-      await Promise.all([
+      const [_, configId] = await Promise.all([
         saveConfiguration(configProps, startUpload),
         saveConfigAction(saveArgs),
       ]);
+
+      return configId;
     },
     onError: () => {
       toast({

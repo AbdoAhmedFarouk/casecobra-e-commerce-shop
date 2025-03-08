@@ -27,4 +27,6 @@ export async function saveConfig({
     where: { id: configId },
     data: { color, finish, material, model },
   });
+
+  return configId;
 }
