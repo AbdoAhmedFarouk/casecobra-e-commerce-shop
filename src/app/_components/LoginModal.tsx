@@ -1,4 +1,6 @@
+import Image from "next/image";
 import type { Dispatch, SetStateAction } from "react";
+import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
 
 import {
   Dialog,
@@ -7,8 +9,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./ui/dialog";
-import Image from "next/image";
-import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
 import { buttonVariants } from "./ui/button";
 
 export default function LoginModal({
