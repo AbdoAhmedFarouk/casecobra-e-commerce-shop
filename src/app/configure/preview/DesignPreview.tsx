@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import { Configuration } from "@prisma/client";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
-import useCreatePaymentSession from "./useCreatePaymentSession";
+import { useCreatePaymentSession } from "./useCreatePaymentSession";
+
 import Phone from "@/app/_components/Phone";
 import LoginModal from "@/app/_components/LoginModal";
 import { Button } from "@/app/_components/ui/button";

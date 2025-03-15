@@ -2,9 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useQuery } from "@tanstack/react-query";
 
-import { getAuthStatus } from "./actions";
+import { useGetAuthStatus } from "./useGetAuthStatus";
 
 import { Loader2 } from "lucide-react";
 
@@ -17,12 +16,7 @@ export default function Page() {
     if (configurationId) setConfigId(configurationId);
   }, []);
 
-  const { data } = useQuery({
-    queryKey: ["auth-callback"],
-    queryFn: async () => await getAuthStatus(),
-    retry: true,
-    retryDelay: 500,
-  });
+  const { data } = useGetAuthStatus();
 
   if (data?.success) {
     if (configId) {

@@ -5,7 +5,7 @@ import { createCheckoutSession } from "./actions";
 
 import { useToast } from "@/app/_components/ui/use-toast";
 
-export default function useCreatePaymentSession() {
+export function useCreatePaymentSession() {
   const router = useRouter();
   const { toast } = useToast();
 
