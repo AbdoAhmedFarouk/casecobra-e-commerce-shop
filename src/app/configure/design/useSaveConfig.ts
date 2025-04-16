@@ -20,7 +20,7 @@ export function useSaveConfig() {
   const { toast } = useToast();
   const { startUpload } = useUploadThing("imageUploader");
 
-  const { mutate: saveConfig } = useMutation({
+  const { mutate: saveConfig, isPending } = useMutation({
     mutationKey: ["save-config"],
     mutationFn: async (args: {
       configProps: SaveConfiguratorFnProps;
@@ -47,5 +47,5 @@ export function useSaveConfig() {
     },
   });
 
-  return { saveConfig };
+  return { saveConfig, isPending };
 }

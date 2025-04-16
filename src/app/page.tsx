@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import MaxWidthWrapper from "./_components/MaxWidthWrapper";
@@ -10,7 +11,7 @@ import { ArrowRight, Check, Star } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="bg-slate-50">
+    <div className="bg-slate-50 grainy-light">
       <section>
         <MaxWidthWrapper
           className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32
@@ -22,7 +23,18 @@ export default function Home() {
               flex flex-col items-center lg:items-start"
             >
               <div className="absolute w-28 left-0 -top-20 hidden lg:block">
-                <img src="/snake-1.png" className="w-full" alt="logo image" />
+                <div
+                  className="absolute inset-x-0 bottom-0 bg-gradient-to-t
+                via-slate-50/50 from-slate-50 h-28"
+                />
+                <Image
+                  width="100"
+                  height="100"
+                  quality={100}
+                  src="/snake-1.png"
+                  className="w-full"
+                  alt="logo image"
+                />
               </div>
 
               <h1
@@ -65,27 +77,37 @@ export default function Home() {
 
               <div className="mt-12 flex flex-col sm:flex-row items-center sm:items-start gap-5">
                 <div className="flex -space-x-4">
-                  <img
+                  <Image
+                    width="100"
+                    height="100"
                     className="inline-block size-10 rounded-full ring-2 ring-slate-100"
                     src="/users/user-1.png"
                     alt="user image"
                   />
-                  <img
+                  <Image
+                    width="100"
+                    height="100"
                     className="inline-block size-10 rounded-full ring-2 ring-slate-100"
                     src="/users/user-2.png"
                     alt="user image"
                   />
-                  <img
+                  <Image
+                    width="100"
+                    height="100"
                     className="inline-block size-10 rounded-full ring-2 ring-slate-100"
                     src="/users/user-3.png"
                     alt="user image"
                   />
-                  <img
+                  <Image
+                    width="100"
+                    height="100"
                     className="inline-block size-10 rounded-full ring-2 ring-slate-100"
                     src="/users/user-4.jpg"
                     alt="user image"
                   />
-                  <img
+                  <Image
+                    width="100"
+                    height="100"
                     className="inline-block object-cover size-10 rounded-full ring-2 ring-slate-100"
                     src="/users/user-5.jpg"
                     alt="user image"
@@ -115,13 +137,17 @@ export default function Home() {
             sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit"
           >
             <div className="relative md:max-w-xl">
-              <img
+              <Image
+                width="100"
+                height="100"
                 src="/your-image.png"
-                className="absolute w-40 lg:w-52 left-56 -top-20 select-none hidden
-                sm:block lg:hidden xl:block"
+                className="absolute w-40 lg:w-52 left-56 xl:left-[10rem] -top-28 xl:-top-40
+                select-none hidden sm:block lg:hidden xl:block"
                 alt="text-image"
               />
-              <img
+              <Image
+                width="100"
+                height="100"
                 src="/line.png"
                 className="absolute w-20 -left-6 -bottom-6 select-none"
                 alt="dashed-arrow"
@@ -151,7 +177,9 @@ export default function Home() {
               say
             </h2>
 
-            <img
+            <Image
+              width="100"
+              height="100"
               src="/snake-2.png"
               alt="testimonials image"
               className="w-24 order-0 lg:order-2"
@@ -183,7 +211,9 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex gap-4 mt-2">
-                <img
+                <Image
+                  width="100"
+                  height="100"
                   src="/users/user-1.png"
                   alt="user"
                   className="rounded-full size-12 object-cover"
@@ -220,7 +250,9 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex gap-4 mt-2">
-                <img
+                <Image
+                  width="100"
+                  height="100"
                   src="/users/user-4.jpg"
                   alt="user"
                   className="rounded-full size-12 object-cover"
@@ -264,7 +296,9 @@ export default function Home() {
               className="flex flex-col items-center relative md:grid
               grid-cols-2 gap-40"
             >
-              <img
+              <Image
+                width="100"
+                height="100"
                 src="/arrow.png"
                 alt="arrow image"
                 className="absolute top-[25rem] md:top-1/2 -translate-y-1/2 z-10
@@ -276,9 +310,10 @@ export default function Home() {
                 bg-gray-900/5 max-w-sm rounded-xl ring-inset ring-gray-900/10
                 lg:rounded-2xl"
               >
-                <img
+                <Image
+                  fill
                   src="/horse.jpg"
-                  alt=""
+                  alt="horse-phone-case"
                   className="rounded-md object-cover bg-white shadow-2xl ring-1 size-full
                   ring-gray-900/10"
                 />

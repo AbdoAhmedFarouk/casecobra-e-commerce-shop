@@ -62,7 +62,7 @@ export default function DesignConfigurator({
   const phoneCaseRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { saveConfig } = useSaveConfig();
+  const { saveConfig, isPending } = useSaveConfig();
 
   return (
     <div className="relative mt-20 grid grid-cols-1 lg:grid-cols-3 mb-20 pb-20">
@@ -310,6 +310,9 @@ export default function DesignConfigurator({
               </p>
 
               <Button
+                isLoading={isPending}
+                disabled={isPending}
+                loadingText="Saving"
                 onClick={() =>
                   saveConfig({
                     configProps: {

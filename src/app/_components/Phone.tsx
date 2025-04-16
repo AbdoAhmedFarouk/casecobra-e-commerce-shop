@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { HTMLAttributes } from "react";
 import { cn } from "@/app/_lib/utils";
 
@@ -27,11 +28,13 @@ export default function Phone({
             ? "/phone-template-dark-edges.png"
             : "/phone-template-white-edges.png"
         }
-        alt="phone image"
+        alt="phone-frame"
       />
 
       <div className="absolute -z-10 inset-0">
-        <img
+        <Image
+          width="100"
+          height="100"
           className="object-cover min-w-full min-h-full"
           src={imgSrc}
           alt="overlaying phone image"

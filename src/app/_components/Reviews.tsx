@@ -111,7 +111,7 @@ function ReviewGrid() {
   return (
     <div
       ref={containerRef}
-      className="relative -mx-4 mt-16 grid h-[49rem] max-h-[150vh]
+      className="relative -mx-2 md:-mx-4 mt-16 grid h-[49rem] max-h-[150vh]
       grid-cols-1 items-start gap-8 overflow-hidden px-4 sm:mt-20
       md:grid-cols-2 lg:grid-cols-3"
     >
@@ -128,11 +128,11 @@ function ReviewGrid() {
             msPerPixel={10}
           />
           <ReviewColumn
-            reviews={[...column3[1], ...column2]}
+            reviews={[...column2, ...column3[1]]}
             className="hidden md:block"
-            // reviewClassName={(reviewIndex) =>
-            //   reviewIndex >= column2.length ? "lg:hidden" : ""
-            // }
+            reviewClassName={(reviewIndex) =>
+              reviewIndex >= column2.length ? "lg:hidden" : ""
+            }
             msPerPixel={15}
           />
           <ReviewColumn

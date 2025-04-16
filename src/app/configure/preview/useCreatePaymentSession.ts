@@ -9,7 +9,7 @@ export function useCreatePaymentSession() {
   const router = useRouter();
   const { toast } = useToast();
 
-  const { mutate: createPaymentSession } = useMutation({
+  const { mutate: createPaymentSession, isPending } = useMutation({
     mutationKey: ["get-checkout-session"],
     mutationFn: createCheckoutSession,
     onSuccess: ({ url }) => {
@@ -28,5 +28,5 @@ export function useCreatePaymentSession() {
     },
   });
 
-  return { createPaymentSession };
+  return { createPaymentSession, isPending };
 }

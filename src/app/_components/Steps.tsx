@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/app/_lib/utils";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const STEPS = [
@@ -54,7 +55,9 @@ export default function Steps() {
                 )}
               >
                 <span className="flex-shrink-0">
-                  <img
+                  <Image
+                    width="100"
+                    height="100"
                     src={imgPath}
                     alt="steps image"
                     className={cn(
