@@ -37,6 +37,7 @@ export default function Phone({
           height="100"
           className="object-cover min-w-full min-h-full"
           src={imgSrc}
+          unoptimized
           alt="overlaying phone image"
         />
       </div>

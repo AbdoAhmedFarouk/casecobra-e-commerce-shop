@@ -18,14 +18,16 @@ export default function Page() {
 
   const { data } = useGetAuthStatus();
 
-  if (data?.success) {
-    if (configId) {
-      localStorage.removeItem("configurationId");
-      router.push(`/configure/preview?id=${configId}`);
-    } else {
-      router.push("/");
+  useEffect(() => {
+    if (data?.success) {
+      if (configId) {
+        localStorage.removeItem("configurationId");
+        router.push(`/configure/preview?id=${configId}`);
+      } else {
+        router.push("/");
+      }
     }
-  }
+  }, [data?.success, configId, router]);
 
   return (
     <div className="w-full mt-24 flex justify-center">
